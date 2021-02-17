@@ -1,0 +1,11 @@
+.infected {
+  border-bottom: 10px solid rgb(236, 236, 1);
+}
+
+.deaths {
+  border-bottom: 10px solid rgb(255, 0, 0);
+}
+
+.recovered {
+  border-bottom: 10px solid rgb(76, 187, 2);
+}

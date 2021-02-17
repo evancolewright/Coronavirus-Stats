@@ -1,38 +1,27 @@
-.App {
+#title-container {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
   text-align: center;
+  font-family: 'Reggae One';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#title-container > h1 {
+  font-family: 'Reggae One';
+  font-style: italic;
+}
+#title-container > h4 {
+  font-family: 'Reggae One';
+  color: rgb(206, 205, 205);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 800px) {
+  #title-container > h1 {
+    font-size: 3.5rem;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #title-container > h4 {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  #title-container {
+    padding-top: 4rem;
   }
 }
