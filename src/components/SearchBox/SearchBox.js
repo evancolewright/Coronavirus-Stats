@@ -1,34 +1,39 @@
 import TextField from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
-import './SearchBox.css';
-import { getTotalCounts } from '../../api';
+import { getTotalCounts } from '../../API';
 
 export default function SearchBox({ countries, setData, setCurrentCountry }) {
   return (
     <Autocomplete
-      id="combo-box-demo"
+      id="search-box"
       options={countries}
       onChange={(event, value) => {
+        // If text box is empty, set to global
         if (value === null || value.name === null) {
           getTotalCounts().then((data) => setData(data));
           setCurrentCountry(null);
           return;
         }
-        setCurrentCountry(value.name);
-        getTotalCounts(value.name).then((data) => setData(data));
+        const { name } = value;
+        setCurrentCountry(name);
+        getTotalCounts(name).then((data) => setData(data));
       }}
       getOptionLabel={(option) => option.name}
-      style={{ width: '75%', margin: '3rem  auto' }}
+      style={{ width: '75%', margin: '4rem auto' }}
       renderInput={(params) => (
         <TextField
-          className="texty"
+          id="search-box-textfield"
           {...params}
           margin="normal"
           label="Filter By Country"
           variant="outlined"
-          style={{ color: 'white' }}
+          style={{
+            color: 'white',
+            width: '60%',
+            margin: '0 auto',
+            display: 'block',
+          }}
         />
       )}
     />

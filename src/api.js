@@ -1,11 +1,8 @@
 import axios from 'axios';
 
-// Base URL for all API requests
 const API_BASE = 'https://covid19.mathdro.id/api';
 
-/**
- * Get our total counts for all countries combined
- */
+// Get total counts for a specific country
 export const getTotalCounts = async (country) => {
   let potentialURL = API_BASE;
 
@@ -26,6 +23,7 @@ export const getTotalCounts = async (country) => {
   };
 };
 
+// Get a list of all countries
 export const getAllCountries = async () => {
   const {
     data: { countries },

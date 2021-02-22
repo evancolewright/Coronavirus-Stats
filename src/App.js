@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { getTotalCounts, getAllCountries } from './api';
+import { getTotalCounts, getAllCountries } from './API';
 import Cards from './components/Cards/Cards';
 import ParticleOverlay from './components/ParticleOverlay/Particles';
 
@@ -16,12 +16,8 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (localStorage.getItem('countries') !== null)
-      getAllCountries().then((countries) =>
-        localStorage.setItem('countries', JSON.stringify(countries))
-      );
+    getAllCountries().then((countries) => setCountries(countries));
 
-    setCountries(JSON.parse(localStorage.getItem('countries')));
     getTotalCounts(currentCountry === null ? null : currentCountry).then(
       (data) => {
         setData(data);
@@ -36,7 +32,7 @@ const App = () => {
       <CssBaseline currentCountry={currentCountry} />
       <Container size="md">
         <div id="title-container">
-          <Typography variant="h1">Covid-19</Typography>
+          <Typography variant="h1">Covid-19 🦠</Typography>
           <Typography variant="h4">
             A real-time Coronavirus stats tracker.
           </Typography>
