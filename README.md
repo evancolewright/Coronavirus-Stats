@@ -26,3 +26,5 @@ npm start
 // Yarn
 yarn start
 ```
+## Live
+https://covid19-searchstats.web.app/
